@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get '/', to: 'static_pages#index'
+
+  # post request to add book into books table
+  post '/books', to: 'books#create'
 end
