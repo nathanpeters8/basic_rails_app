@@ -12,7 +12,18 @@ class BooksController < ApplicationController
         #render json: params
         
         # store input data in new record in database
-        new_book = Book.create(name: params[:name], publishing_year: params[:publishing_year], num_of_pages: params[:num_of_pages])
-        render json: { book: new_book }
+        @book = Book.create(name: params[:name])
+
+        # render json file 
+        # render json: { book: new_book }
+
+        # render jbuilder file (full path)
+        # render '../../app/views/books/create'
+
+        # render jbuilder file (short)
+        render 'books/create'
+
+        # this line also works
+        # render :create, format: :json
     end
 end
